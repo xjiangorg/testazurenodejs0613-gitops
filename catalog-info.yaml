@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: testazurenodejs0613-gitops
+  description: This is GitOps manifest for testazurenodejs0613   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=testazurenodejs0613
+    backstage.io/kubernetes-id: testazurenodejs0613 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: xjiangorg/testazurenodejs0613-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: xjiangorg.testazurenodejs0613-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:testazurenodejs0613
